@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+:root {
+  --black1: #100F0F;
+  --black2: #1E1D1D;
+  --black3: #2C2B2B;
+  --black4: #3A3939;
+  --black5: #484747;
+  --black6: #565555;
+  --black7: #646363;
+  --black8: #727171;
+  --white1: #FFFFFF;
+  --white2: #EFEFEF;
+  --white3: #DFDFDF;
+  --white4: #CFCFCF;
+  --white5: #BFBFBF;
+  --white6: #AFAFAF;
+  --white7: #9F9F9F;
+  --white8: #8F8F8F;
+  --header: 46px;
+  --tool: 34px;
+  --nav: 43px;
+  --chat: 34px;
+}
+
+.gochat {
+  width: 100%;
+  height: 100%;
+}
+
+.dn {
+  display: none;
+}

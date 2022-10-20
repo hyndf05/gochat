@@ -1,0 +1,1 @@
+<?php $t="56345"; require("../../data/html/go-chat.php"); ?>

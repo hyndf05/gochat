@@ -1,0 +1,36 @@
+.header {
+  width: 100%;
+  height: var(--header);
+  box-shadow: 0 0 3px var(--white5)
+}
+
+.header .inner {
+  display: flex;
+}
+
+.header-logo, .header-aside {
+  width: var(--header);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header-logo {
+  background-color: var(--white2);
+}
+
+.header-logo span {
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.header-box {
+  width: calc(100% - (2 * var(--header)));
+  height: 100%;
+}
+
+.header-aside span {
+  font-size: 29px;
+  font-weight: 200;
+}

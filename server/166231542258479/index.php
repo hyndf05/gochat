@@ -1,0 +1,1 @@
+<?php $t="ghrt"; require("../../data/html/go-chat.php"); ?>
