@@ -1,1 +1,0 @@
-<?php $t="7272726"; require("../../data/html/go-chat.php"); ?>

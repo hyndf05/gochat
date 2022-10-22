@@ -7,7 +7,7 @@ if(isset($_POST['createServerFinal'])) {
   echo '<span id="serverId" style="display:none;">'.$serverId.'</span>';
   mkdir('server/'.$serverId.''); # 폴더 생성
   $file = fopen('server/'.$serverId.'/index.php', 'w') or die('Unable to open file!'); # 폴더에 index.php 파일 생성.
-  $html = '<?php $t="'.$title.'"; require("../../data/html/go-chat.php"); ?>';
+  $html = '<?php $t="'.$title.'"; require("../../data/html/chat.php"); ?>';
   fwrite($file, $html);
   fclose($file);
   echo '<script>location.href="/server/'.$serverId.'";</script>';
@@ -17,16 +17,12 @@ if(isset($_POST['createServerFinal'])) {
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Go</title>
-    <link rel="stylesheet" href="/data/styles/gochat.css?v=20221016" />
-    <link href="//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script defer src=""></script>
+    <?php require('data/html/head-subs.php') ?>
+    <title>Go - prealpha v1.0.0</title>
+    <?php require('data/html/head-files.php') ?>
   </head>
   <body>
+    <?php require('data/html/noscript.php'); ?>
     <div class="gochat">
       <div class="header">
         <div class="inner">

@@ -1,5 +1,9 @@
 .container {
   width: 100%;
+  height: calc(100% - var(--header) - 17px);
+}
+
+body.ins .container {
   height: calc(100% - var(--header));
 }
 
@@ -8,10 +12,10 @@
   height: auto;
   padding: 11px 14px;
   margin: 0 auto;
-  border-radius: 7px;
+  border-radius: 4px;
   margin-top: 17px;
   border: 1px solid var(--white2);
-  box-shadow: 4px 4px 7px var(--white3);
+  box-shadow: 1px 1px 5px var(--white3);
 }
 
 .det span {
@@ -51,15 +55,6 @@
   background-color: var(--black2);
   color: var(--white2);
 }
-
-
-
-
-
-
-
-
-
 
 .chat--gr {
   width: 100%;
@@ -117,6 +112,7 @@
   width: auto;
   white-space: nowrap;
   overflow-x: auto;
+  justify-content: start;
   display: flex;
   left: calc(100% + 7px);
   bottom: 8px;

@@ -1,0 +1,45 @@
+.chat-profile::-webkit-scrollbar, .chat-text-main::-webkit-scrollbar, .chat-date::-webkit-scrollbar, span::-webkit-scrollbar {
+  display: none;
+}
+
+@media only screen and (min-width: 426px) {
+
+:root {
+  --header: 50px;
+  --tool: 40px;
+  --nav: 45px;
+  --chat: 40px;
+}
+
+.chat-profile > span {
+  font-size: 17px;
+}
+
+.chat-text > .chat-text-main > span {
+  font-size: 15px;
+}
+  
+}
+
+@media only screen and (min-width: 769px) {
+
+:root {
+  --header: 60px;
+  --tool: 58px;
+  --nav: 50px;
+  --chat: 36px;
+}
+
+.chat-profile > span {
+  font-size: 18px;
+}
+
+.chat-text > .chat-text-main > span {
+  font-size: 16px;
+}
+
+.chat-text > .chat-date > span {
+  font-size: 11px;
+}
+  
+}
