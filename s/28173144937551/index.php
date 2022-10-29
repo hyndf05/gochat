@@ -1,0 +1,1 @@
+<?php $t="777777t"; require("../../data/html/chat.php"); ?>

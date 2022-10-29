@@ -24,7 +24,7 @@ const db = getDatabase();
 
 var c = $(location).attr('pathname');
 
-var serverId = c.slice(8);
+var serverId = c.slice(3);
 var messageCode;
 var user;
 var msg;
@@ -41,7 +41,7 @@ function sendMessage() {
     onlyOnce: true
   })
   function add() {
-    update(ref(db, `server/${serverId}`), {
+    update(ref(db, `server/${serverId}`), { // dbSave?firebase
       message: messageCode
     }, {
       onlyOnce: true
@@ -61,7 +61,7 @@ function sendMessage() {
       msg: msg,
       stamp: stamp
     });
-  }
+  } // code : rand()
 }
 
   const starCountRef = ref(db, `server/${serverId}/chat`);
@@ -105,7 +105,7 @@ for (let d=1;d<data3+1;d++) {
     `);
     chatAdded(data3);
   })
-}
+ }
 }
 
 function chatAdded(data3) {

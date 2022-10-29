@@ -128,14 +128,14 @@ function sendMessage() {
   }
 }
 
-  const starCountRef = ref(db, `server/${serverId}/chat`);
+const starCountRef = ref(db, `server/${serverId}/chat`);
 onValue(starCountRef, (snapshot) => {
   const data2 = snapshot.val();
   var data20 = data2; // 채팅 array
   const starCountRef2 = ref(db, `server/${serverId}/message`);
   onValue(starCountRef2, (snapshot) => {
     const data3 = snapshot.val(); // 개수
-    stat(data3, data20);
+    stat(data3, data20); // f.live
   }) 
 }, {
   onlyOnce: true
@@ -143,16 +143,22 @@ onValue(starCountRef, (snapshot) => {
       
 function stat(data3, data20) {
 console.log(`데이터 수: ${data3}`);
-$('.chat--gr').remove();
+$('.chat--gr').remove(); // 계산후 del
 var dx = Object.keys(data20).length;
 for (let d=1;d<data3+1;d++) {
 var xd = data20[Object.keys(data20)[d]];
 const starCountRef4 = ref(db, `server/${serverId}/chat/${d}`);
 onValue(starCountRef4, (snapshot) => {
   const data4 = snapshot.val();
+  var data4msg = data4.msg;
   if (data4.msg.match('blob:')) {
-    alert('이미지 업로드 서비스가 잠시 중단되었습니다.');
     $('.chatlist').append(`
+    <div class="chat--gr chat--tp-img">
+      <img src="${data4msg}">
+      <div class="chat--tp-img-text--absolute">
+        <span id="username">${data4.user}</span>
+      </div>
+    </div>
     `);
   } else {
     $('.chatlist').append(`

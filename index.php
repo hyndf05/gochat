@@ -5,12 +5,12 @@ if(isset($_POST['createServerFinal'])) {
   $pw = $_POST['password'];
   $serverId = $_POST['serverId'];
   echo '<span id="serverId" style="display:none;">'.$serverId.'</span>';
-  mkdir('server/'.$serverId.''); # 폴더 생성
-  $file = fopen('server/'.$serverId.'/index.php', 'w') or die('Unable to open file!'); # 폴더에 index.php 파일 생성.
+  mkdir('s/'.$serverId.''); # create folder
+  $file = fopen('s/'.$serverId.'/index.php', 'w') or die('Unable to open file!'); # create index.php on folder which created before
   $html = '<?php $t="'.$title.'"; require("../../data/html/chat.php"); ?>';
   fwrite($file, $html);
   fclose($file);
-  echo '<script>location.href="/server/'.$serverId.'";</script>';
+  echo '<script>location.href="/s/'.$serverId.'";</script>';
 }
 ?>
   
@@ -18,11 +18,12 @@ if(isset($_POST['createServerFinal'])) {
 <html>
   <head>
     <?php require('data/html/head-subs.php') ?>
-    <title>Go - prealpha v1.0.0</title>
+    <title>Go</title>
     <?php require('data/html/head-files.php') ?>
   </head>
   <body>
     <?php require('data/html/noscript.php'); ?>
+    <?php require('data/html/aside.php'); ?>
     <div class="gochat">
       <div class="header">
         <div class="inner">
@@ -41,7 +42,7 @@ if(isset($_POST['createServerFinal'])) {
             <span>채팅방 생성</span>
           </div>
           <div class="dex" id="createForm">
-            <form action="#" method="post" name="roomCreate">
+            <form action="/#/server?sb=2" method="post" name="roomCreate">
               <input type="text" class="ix" id="serverId" name="serverId" style="display:none;">
               <div class="dex-line">
                 <input type="text" class="ix" id="title" name="title" placeholder="제목" required>
@@ -99,7 +100,7 @@ const db = getDatabase();
     update(ref(db, `server/${serverId}/chat/1`), {
       user: 'SERVER', 
       msg: 'Server Created.',
-      stamp: '1억년 전'
+      stamp: '1yr ago'
     });
   });
 </script>

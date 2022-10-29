@@ -3,43 +3,29 @@
 }
 
 @media only screen and (min-width: 426px) {
-
-:root {
-  --header: 50px;
-  --tool: 40px;
-  --nav: 45px;
-  --chat: 40px;
 }
 
-.chat-profile > span {
-  font-size: 17px;
+@media only screen and (min-width: 769px) { 
 }
 
-.chat-text > .chat-text-main > span {
-  font-size: 15px;
-}
-  
-}
-
-@media only screen and (min-width: 769px) {
-
-:root {
-  --header: 60px;
-  --tool: 58px;
-  --nav: 50px;
-  --chat: 36px;
+.chat--tp-img {
+  width: auto;
+  height: 130px;
+  position: relative;
 }
 
-.chat-profile > span {
-  font-size: 18px;
+.chat--tp-img img {
+  height: calc(100% - 30px);
 }
 
-.chat-text > .chat-text-main > span {
-  font-size: 16px;
+.chat--tp-img-text--table span {
+      font-size: 10px;
+    font-weight: 100;
+    color: #861A1A;
 }
 
-.chat-text > .chat-date > span {
-  font-size: 11px;
-}
-  
+.chat--tp-img-text--absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
